@@ -1,39 +1,31 @@
 function calculateTax(amount) {
-    let tax = amount * 0.10;
-    return tax;
+    return amount * 0.10;
 }
-console.log(calculateTax(100))
 
 function convertToUpperCase(text) {
     return text.toUpperCase();
 }
-console.log(convertToUpperCase("hello world"));
 
 function findMaximum(num1, num2) {
-    if (num1 > num2) {
-        return num1;
-    } else{
-        return num2;
-    }
+    return num1 > num2 ? num1 : num2;
 }
-console.log(findMaximum(20, 68));
 
-function isPalindr(word) {
-    const reversedWord = word.split(' ').reverse().join(' ');
-    return word === reversedWord;
+function isPalindrome(word) {
+    const lowercaseWord = word.toLowerCase();
+    const reversedWord = lowercaseWord.split("").reverse().join("");
+
+    return lowercaseWord === reversedWord;
 }
-console.log(isPalindr("radar"));
-console.log(isPalindr("hello"))
-console.log(isPalindr("racecar"));
 
 function calculateDiscountedPrice(originalPrice, discountPercentage) {
-    let discount = originalPrice * (discountPercentage / 100)
-    let finalPrice = originalPrice - discount;
-    return finalPrice;
+    const discount = originalPrice * (discountPercentage / 100);
+    return originalPrice - discount;
 }
-let result = calculateDiscountedPrice(100, 15)
-console.log(result)
 
-
-// This is required for the test to function properly  
-module.exports = { calculateTax, convertToUpperCase, findMaximum, isPalindr}
+module.exports = {
+    calculateTax,
+    convertToUpperCase,
+    findMaximum,
+    isPalindrome,
+    calculateDiscountedPrice,
+};
